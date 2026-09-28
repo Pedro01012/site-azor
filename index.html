@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-hyafSTV5JgijxP4+HSK+56z+w5nnXcrMogTcg2cJTp8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://discord.com https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; worker-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-DtEzysc0TMjC9OBw+A34fD55kietSIRo/LbgHo4JIaY='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://discord.com https://formsubmit.co; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'none'; worker-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Otimização de PC, console (PS4/PS5/Xbox), Windows otimizado e BIOS com pacotes de preço fixo a partir de R$ 45. Pagamento por Pix e atendimento ao vivo pelo Discord.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FBF3F7">
@@ -1595,7 +1595,7 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
       const pw = w - L - R, ph = h - T - B;
       const step = pw / (N - 1);
       const x = i => L + (i - offset) * step;
-      const y = ms => T + ph - (Math.min(ms, MAX_MS) / MAX_MS) * ph;
+      const y = ms => T + (Math.min(ms, MAX_MS) / MAX_MS) * ph;
 
       ctx.clearRect(0, 0, w, h);
 
@@ -1618,8 +1618,8 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
 
       if (glow) {
         trace(ctx, data, x, y);
-        ctx.lineTo(x(N), T + ph); ctx.lineTo(x(0), T + ph); ctx.closePath();
-        const fill = ctx.createLinearGradient(0, y(10), 0, T + ph);
+        ctx.lineTo(x(N), T); ctx.lineTo(x(0), T); ctx.closePath();
+        const fill = ctx.createLinearGradient(0, y(10), 0, T);
         fill.addColorStop(0, rgba(color, 0.24));
         fill.addColorStop(1, rgba(color, 0));
         ctx.fillStyle = fill; ctx.fill();
