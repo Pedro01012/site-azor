@@ -171,7 +171,7 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
 .theme[data-mode="dark"] .i-sun{display:block}
 .theme[data-mode="dark"] .i-moon{display:none}
 @media (max-width:1000px){.theme__label{display:none}.theme{padding:0}}
-@media (max-width:860px){.nav{display:none}.top__actions{margin-left:auto}}
+@media (max-width:1000px){.nav{display:none}.top__actions{margin-left:auto}}
 
 /* ===== Hero ===== */
 .hero{position:relative;overflow:hidden;isolation:isolate;padding-block:60px 84px}
@@ -227,16 +227,6 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
 .stat__v--before{color:var(--muted)}
 .stat__v--after{color:var(--accent-ink)}
 .scope figcaption{font-size:13px;color:var(--muted);margin-top:14px}
-
-/* Faixa de specs inclinada */
-.ticker-wrap{overflow:hidden;padding-block:26px;margin-block:-14px}
-.ticker{width:calc(100% + 80px);margin-left:-40px;transform:rotate(-1.6deg);background:linear-gradient(90deg,#C2185B,#E0348E 50%,#8B3FD9);padding-block:15px;box-shadow:0 24px 50px -26px var(--glow);overflow:hidden}
-.ticker__track{display:flex;width:max-content;animation:ticker 46s linear infinite}
-.ticker:hover .ticker__track{animation-play-state:paused}
-.ticker ul{display:flex;list-style:none;margin:0;padding:0}
-.ticker li{display:flex;align-items:center;gap:26px;padding-right:26px;font-family:var(--f-mono);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap}
-.ticker li::after{content:"";width:7px;height:7px;background:#FFFFFF;opacity:.85;transform:rotate(45deg)}
-@keyframes ticker{to{transform:translateX(-50%)}}
 
 /* ===== Seções ===== */
 .section{position:relative;isolation:isolate;padding-block:96px}
@@ -639,6 +629,9 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
 .cta__box h2 em{font-style:normal;background:linear-gradient(90deg,#FF8FC8,#FF4DA6 55%,#A64DFF);-webkit-background-clip:text;background-clip:text;color:transparent}
 .cta__box p{margin:0;color:#C9A9BC;font-size:18px;max-width:34em}
 .cta__row{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:28px}
+.cta__assure{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:#C9A9BC}
+.cta__assure li{display:flex;align-items:center;gap:7px}
+.cta__assure svg{width:16px;height:16px;color:#3DDC97;flex:none}
 .invite{display:inline-flex;align-items:center;gap:4px;padding:5px 5px 5px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);max-width:100%}
 .invite code{font-family:var(--f-mono);font-size:14px;color:#F7E9F1;user-select:all;overflow-wrap:anywhere}
 .invite button{appearance:none;border:0;background:rgba(255,255,255,.08);color:#FF8CC8;font:700 14px/1 var(--f-body);padding:10px 14px;border-radius:999px;cursor:pointer}
@@ -669,6 +662,8 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
   .mbar.is-teaser .mbar__txt--order,.mbar.is-teaser .mbar__go{display:none}
   .mbar.is-teaser .mbar__txt--teaser{display:flex}
   .mbar.is-teaser .mbar__see{display:inline-flex}
+  /* Reserva espaço pra barra fixa não tapar o fim do rodapé */
+  .foot{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
 }
 
 /* ===== Barra de progresso da leitura ===== */
@@ -816,19 +811,6 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
       </div>
     </div>
   </section>
-
-  <div class="ticker-wrap" aria-hidden="true">
-    <div class="ticker">
-      <div class="ticker__track">
-        <ul>
-          <li>Frametime estável</li><li>Menos input lag</li><li>XMP / EXPO</li><li>Resizable BAR</li><li>Desempenho Máximo</li><li>HAGS</li><li>Rede e DNS</li><li>Sem bloatware</li><li>Painel NVIDIA / AMD</li><li>Game DVR off</li><li>Ponto de restauração</li>
-        </ul>
-        <ul>
-          <li>Frametime estável</li><li>Menos input lag</li><li>XMP / EXPO</li><li>Resizable BAR</li><li>Desempenho Máximo</li><li>HAGS</li><li>Rede e DNS</li><li>Sem bloatware</li><li>Painel NVIDIA / AMD</li><li>Game DVR off</li><li>Ponto de restauração</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
   <section class="section" id="problema" aria-labelledby="problema-h">
     <div class="wrap">
@@ -1237,6 +1219,10 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
       </header>
       <div class="faq">
         <details>
+          <summary>Tem garantia?</summary>
+          <p>Garantimos a segurança do processo: antes de qualquer ajuste é criado um ponto de restauração, então se algo não te agradar o PC volta exatamente como estava, sem custo. Como o atendimento é ao vivo e personalizado, não há reembolso depois que ele começa — por isso o pagamento só acontece depois que pacote e valor já foram confirmados com você no ticket, nunca antes.</p>
+        </details>
+        <details>
           <summary>Qual pacote eu escolho?</summary>
           <p>Uso do dia a dia e jogo leve: Essencial. Joga casual com os amigos: Gamer. Ranked e jogo competitivo: Pro. Quer tirar tudo do PC, inclusive a BIOS: Extremo. Na dúvida, manda as specs no ticket que a gente te indica.</p>
         </details>
@@ -1297,6 +1283,11 @@ a.brand:hover .brand__mark{transform:rotate(-8deg) scale(1.06)}
             </a>
             <button type="button" class="btn btn--lg btn--ghost" id="share-btn"><svg aria-hidden="true"><use href="#i-share"/></svg>Mandar pro seu duo</button>
           </div>
+          <ul class="cta__assure">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Ponto de restauração antes de qualquer ajuste</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Valor combinado com você antes de começar</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Sem letra miúda: preço fixo, sem surpresa</li>
+          </ul>
           <p class="invite-row"><span class="invite"><code id="invite-text" data-discord-label>discord.gg/vwsmPucE6v</code><button type="button" id="copy-invite">Copiar</button></span></p>
           <p class="live" data-discord-live hidden><span class="live__dot" aria-hidden="true"></span><span><b data-dc-online>0</b> pessoas online agora no servidor</span></p>
         </div>
